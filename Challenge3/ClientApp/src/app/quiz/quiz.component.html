@@ -1,0 +1,20 @@
+<p>
+  Test your Knowledge 
+</p>
+
+<div *ngFor="let qa of qnas">
+  <div>
+   <b> {{qa.id}}.&nbsp;{{qa.question}} </b>
+  </div>
+  <div *ngFor="let qwo of qa.questWiseOptions">
+    <div>
+      <input type="radio" id="ol" value="ol" [checked]="qwo.selected" (click)="addAnswers(qa.id, qwo.option); ">
+      <label for="ol">&nbsp; {{qwo.option}}</label>
+    </div>
+  </div>
+  <br />
+</div>
+<br />
+<br />
+<input type="button" name="Submit" value="Submit" (click)="verifyanswers()"/> <br />
+<h3 >{{message}}</h3>
